@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReactJS</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  </head>
+  <body>
+    <script>
+      // DOM
+      const h1Dom = document.createElement('h1');
+      h1Dom.title = 'heading';
+      h1Dom.textContent = 'Hello guys';
+      document.body.appendChild(h1Dom);
+
+      // React
+      const h1React = React.createElement(
+        'h1',
+        {
+          title: 'heading',
+          className: 'react',
+        },
+        'Hello guys',
+      );
+
+      // console.dir(h1Dom);
+      // console.log(h1React);
+
+      // ---------------------------------//
+      // Dom
+      const ulDom = document.createElement('ul');
+      ulDom.id = 'ul-id';
+      ulDom.style = 'color:red;font-size:30px';
+      const liDom1 = document.createElement('li');
+      liDom1.innerText = 'JavaScript';
+      const liDom2 = document.createElement('li');
+      liDom2.innerText = 'Reactjs';
+
+      ulDom.appendChild(liDom1);
+      ulDom.appendChild(liDom2);
+      document.body.appendChild(ulDom);
+      // React
+      const ulReact = React.createElement(
+        'ul',
+        { id: 'ul-id', style: 'color:red;font-size:30px' },
+        React.createElement('li', { id: 'li-1' }, 'JavaScript'),
+        React.createElement('li', null, 'ReactJs'),
+      );
+
+      console.log(ulReact);
+    </script>
+  </body>
+</html>

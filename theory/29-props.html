@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReactJS</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      // PostItem.js
+      function PostItem({ image = 'hihi', title, desc, published, callback }) {
+        if (typeof callback === 'function') callback(Math.random());
+        return (
+          <div className="post-item">
+            <label htmlFor="email">Email</label>
+            <input id="email" type="text" />
+            <img src={image} alt={image} />
+            <h2 className="post-title">{title}</h2>
+            <p className="post-desc">{desc}</p>
+            <p className="post-published">{published}</p>
+          </div>
+        );
+      }
+
+      // App.js
+      function App() {
+        return (
+          <div id="wrapper">
+            <PostItem
+              image="https://thcschuvanan.tptdm.edu.vn/uploads/thcschuvanan/news/2019_01/img-9878.png"
+              title="Suleng-fullstack"
+              desc="Học ngày đêm"
+              published="Cày để kiếm việc"
+              data={[{ a: 1 }, { b: 2 }]}
+              callback={(x) => {
+                console.log(x);
+              }}
+            />
+            <PostItem
+              image="https://thcschuvanan.tptdm.edu.vn/uploads/thcschuvanan/news/2019_01/img-9878.png"
+              title="Suleng-FrontEnd1"
+              desc="Học ngày đêm"
+              published="Cày để kiếm việc"
+            />
+            <PostItem
+              image="https://thcschuvanan.tptdm.edu.vn/uploads/thcschuvanan/news/2019_01/img-9878.png"
+              title="Suleng-fullstack1"
+              desc="Học ngày đêm1"
+              published="Cày để kiếm việc1"
+            />
+          </div>
+        );
+      }
+
+      // index.js
+      ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+  </body>
+</html>

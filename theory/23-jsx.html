@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReactJS</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <h1 style="color: blueviolet">Hello long</h1>
+    <div id="root"></div>
+    <script type="text/babel">
+      // const ul = React.createElement(
+      //   'ul',
+      //   null,
+      //   React.createElement('li', null, 'JavaScript'),
+      //   React.createElement('li', null, 'ReactJS'),
+      // );
+
+      // ReactDOM.render(ul, document.getElementById('root'));
+      // const container = document.getElementById('root');
+      // const root = ReactDOM.createRoot(container);
+      // root.render(ul);
+
+      const coursesList = [
+        { name: 'html,css' },
+        { name: 'Suleng React' },
+        { name: 'javascript-pro-master' },
+      ];
+
+      const ulElement = (
+        <ul>
+          {coursesList.map((course, index) => (
+            <li style={{ color: '#512d62' }} className={`item-${index}`} key={index}>
+              {course.name}
+            </li>
+          ))}
+        </ul>
+      );
+
+      const container = document.getElementById('root');
+      const root = ReactDOM.createRoot(container);
+      root.render(ulElement);
+    </script>
+  </body>
+</html>

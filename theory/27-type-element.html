@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReactJS</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function PostList() {
+        return (
+          <div className="post-item">
+            <img
+              src="https://thcschuvanan.tptdm.edu.vn/uploads/thcschuvanan/news/2019_01/img-9878.png"
+              alt="Dungx fullstack"
+            />
+            <h2 className="post-title">Suleng fullstack</h2>
+            <p className="post-desc">Học ngày đêm</p>
+            <p className="post-published">Cày để kiếm việc</p>
+          </div>
+        );
+      }
+
+      // class Content extends React.Component {
+      //   render() {
+      //     return <div className="content">NewContent</div>;
+      //   }
+      // }
+
+      const app = (
+        <div className="post-item">
+          <PostList />
+          <PostList />
+        </div>
+      );
+
+      ReactDOM.render(app, document.getElementById('root'));
+    </script>
+  </body>
+</html>
